@@ -1,10 +1,12 @@
+import AnimationWrapper from "../common/page-animation";
 import InputBox from "../components/input.component";
 import googleIcon from "../imgs/google.png";
 import { Link } from 'react-router-dom';
 
 const UserAuthForm = ({ type }) => {
     return (
-        <section className="h-cover flex items-center justify-center">
+        <AnimationWrapper> 
+            <section className="h-cover flex items-center justify-center">
             <form className="w-[80%] max-w-[400px]">
                 <h1 className="text-4xl font-gelasio capitalize text-center mb-24">
                     {type === "sign-in" ? "Welcome back" : "Join us today"}
@@ -61,6 +63,7 @@ const UserAuthForm = ({ type }) => {
                 )}
             </form>
         </section>
+        </AnimationWrapper>
     );
 }
 
