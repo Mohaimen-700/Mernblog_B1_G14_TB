@@ -7,15 +7,14 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar">
+            <nav className="navbar relative">
                 {/* Logo */}
                 <Link to="/" className="flex-none w-10">
                     <img src={logo} className="w-full" alt="Logo" />
                 </Link>
 
                 {/* Search Box */}
-                <div className={"absolute bg-white w-full left-0 top-full mt-0 border-b border-grey py-4 px-[5vw] md:border-0 md:block md:relative md:inset-0 md:p-0 md:w-auto " +
-                     (searchBoxVisibility ? 'show' : 'hide')}>
+                <div className={`absolute bg-white w-full left-0 top-full mt-0 border-b border-grey py-4 px-[5vw] md:border-0 md:block md:relative md:inset-0 md:p-0 md:w-auto ${searchBoxVisibility ? 'block' : 'hidden'} md:block`}>
                     <input
                         type="text"
                         placeholder="Search"
@@ -27,8 +26,10 @@ const Navbar = () => {
                 {/* Buttons and Links */}
                 <div className="flex items-center gap-3 md:gap-6 ml-auto">
                     {/* Button for toggling search box visibility */}
-                    <button className="md:hidden bg-grey w-12 h-12 rounded-full flex items-center justify-center"
-                     onClick={() => setSearchBoxVisibility(currentVal => !currentVal)}>
+                    <button
+                        className="md:hidden bg-grey w-12 h-12 rounded-full flex items-center justify-center"
+                        onClick={() => setSearchBoxVisibility(currentVal => !currentVal)}
+                    >
                         <i className="fi fi-rr-search text-xl"></i>
                     </button>
 
