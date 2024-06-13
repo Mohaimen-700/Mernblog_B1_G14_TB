@@ -1,4 +1,5 @@
 import { useState } from "react";
+import UserAuthForm from "../pages/userAuthForm.page";
 
 const InputBox = ({ name, type, id, value, placeholder, icon }) => {
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -13,7 +14,7 @@ const InputBox = ({ name, type, id, value, placeholder, icon }) => {
                 id={id}
                 className="input-box"
             />
-            <i className={`fi ${icon} input-icon`}></i>
+            <i className={"fi"+icon+"input-icon"}></i>
             {type === "password" && (
                 <i
                     className={`fi fi-rr-eye${!passwordVisible ? "-crossed" : ""} input-icon left-[auto] right-4 cursor-pointer`}
